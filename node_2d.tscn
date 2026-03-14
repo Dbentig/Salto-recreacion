@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://gqujvpu0fv27"]
+
+[ext_resource type="Script" uid="uid://b5utmott5jk8j" path="res://Cubito_movimiento.gd" id="1_0e48y"]
+[ext_resource type="Shader" uid="uid://cwxvk64gsboh4" path="res://Degradado_cubito.gdshader" id="2_epypp"]
+[ext_resource type="Script" uid="uid://bmtw3l7gp6iml" path="res://camera_2d.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://dkf8xfy2wqwiy" path="res://static_body_2d_2.gd" id="4_0hol4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hol4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6r6c"]
+shader = ExtResource("2_epypp")
+shader_parameter/center_color = Color(0.45, 0.45, 0.45, 1)
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kdubu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(693.75, 341.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdubu"]
+shader = ExtResource("2_epypp")
+shader_parameter/center_color = Color(0.45, 0.45, 0.45, 1)
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d21ai"]
+
+[node name="Node2D" type="Node2D" unique_id=328654601]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1619874411]
+script = ExtResource("1_0e48y")
+metadata/Cubito_Movimiento = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=145394352]
+position = Vector2(0, -2)
+scale = Vector2(3.6, 3.6)
+shape = SubResource("CircleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D" unique_id=1884802246]
+material = SubResource("ShaderMaterial_q6r6c")
+scale = Vector2(21, 21)
+texture = SubResource("CanvasTexture_kdubu")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2034145997]
+position = Vector2(-4, 7)
+zoom = Vector2(0.75, 0.75)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("3_epypp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1361052307]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=741762850]
+position = Vector2(819.125, -463.125)
+shape = SubResource("RectangleShape2D_epypp")
+debug_color = Color(0.89346814, 0.00022890985, 0.78572875, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1153452386]
+show_behind_parent = true
+offset_left = -4341.0
+offset_top = -2167.0
+offset_right = 4147.0
+offset_bottom = 2608.0
+color = Color(0.15686275, 0.90588236, 0.41960785, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=43608440]
+position = Vector2(525, -251)
+script = ExtResource("4_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=984210575]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/CollisionShape2D" unique_id=746220465]
+material = SubResource("ShaderMaterial_kdubu")
+scale = Vector2(22, 22)
+texture = SubResource("CanvasTexture_d21ai")
