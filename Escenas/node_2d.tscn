@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://gqujvpu0fv27"]
 
 [ext_resource type="PackedScene" uid="uid://b3rpl8pywffc" path="res://Escenas/Cubito.tscn" id="1_h3eif"]
-[ext_resource type="PackedScene" uid="uid://b5jmt6inuvdd2" path="res://Camara.tscn" id="2_iijfg"]
+[ext_resource type="PackedScene" uid="uid://by1odl8dtlqxm" path="res://Camara3D.tscn" id="2_eeo38"]
+[ext_resource type="Script" uid="uid://cixoyod5f5fs8" path="res://Scripts/camara_3d.gd" id="3_2estv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0e48y"]
 
@@ -24,8 +25,7 @@ omni_range = 19.727654
 [node name="Cubito" parent="." unique_id=58941857 instance=ExtResource("1_h3eif")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6165009, 0)
 
-[node name="Camera3D" parent="." unique_id=1970383487 node_paths=PackedStringArray("objetivo") instance=ExtResource("2_iijfg")]
-transform = Transform3D(1, 0, 0, 0, 0.087155804, 0.9961947, 0, -0.9961947, 0.087155804, 0, 1.3589153, 3.994916)
+[node name="Camera3D" parent="." unique_id=1511652403 node_paths=PackedStringArray("objetivo") instance=ExtResource("2_eeo38")]
+transform = Transform3D(1, 0, 0, 0, 0.18487757, 0.9827616, 0, -0.9827616, 0.18487757, 0, 0, 0)
+script = ExtResource("3_2estv")
 objetivo = NodePath("../Cubito")
-offset = Vector3(0, 8, 1.2)
-suavizado = 0.15
