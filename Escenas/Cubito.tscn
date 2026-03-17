@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b3rpl8pywffc"]
+
+[ext_resource type="Script" uid="uid://m5lxmeuxp3oe" path="res://Scripts/cubito.gd" id="1_lykk2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6h040"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lykk2"]
+
+[node name="Cubito" type="CharacterBody3D" unique_id=58941857]
+script = ExtResource("1_lykk2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=70690728]
+shape = SubResource("BoxShape3D_6h040")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1202318689]
+mesh = SubResource("BoxMesh_lykk2")
