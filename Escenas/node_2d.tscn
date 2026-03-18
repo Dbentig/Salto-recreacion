@@ -2,30 +2,51 @@
 
 [ext_resource type="PackedScene" uid="uid://b3rpl8pywffc" path="res://Escenas/Cubito.tscn" id="1_h3eif"]
 [ext_resource type="PackedScene" uid="uid://by1odl8dtlqxm" path="res://Camara3D.tscn" id="2_eeo38"]
-[ext_resource type="Script" uid="uid://cixoyod5f5fs8" path="res://Scripts/camara_3d.gd" id="3_2estv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0e48y"]
+size = Vector3(1, 1, 0.056640625)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iijfg"]
+albedo_color = Color(0, 1, 0.24313726, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iijfg"]
+material = SubResource("StandardMaterial3D_iijfg")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iijfg"]
+size = Vector3(3.0056152, 2.7573395, 17.05317)
+
+[sub_resource type="BoxMesh" id="BoxMesh_eeo38"]
 
 [node name="Node3D" type="Node3D" unique_id=1144813352]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=31432868]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=986176867]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(21.575212, 0, 0, 0, 1, 0, 0, 0, 302.95905, 0, 0, 0)
 shape = SubResource("BoxShape3D_0e48y")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=652860015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32030058, 5.252097, -0.2394352)
-light_energy = 6.23
-light_indirect_energy = 1.5
-light_volumetric_fog_energy = 1.318
-light_specular = 0.455
-omni_range = 19.727654
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1266513384]
+transform = Transform3D(21.66072, 0, 0, 0, 1, 0, 0, 0, 17.172558, -0.03588581, 0, -0.017108917)
+mesh = SubResource("BoxMesh_iijfg")
 
 [node name="Cubito" parent="." unique_id=58941857 instance=ExtResource("1_h3eif")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6165009, 0)
 
 [node name="Camera3D" parent="." unique_id=1511652403 node_paths=PackedStringArray("objetivo") instance=ExtResource("2_eeo38")]
 transform = Transform3D(1, 0, 0, 0, 0.18487757, 0.9827616, 0, -0.9827616, 0.18487757, 0, 0, 0)
-script = ExtResource("3_2estv")
 objetivo = NodePath("../Cubito")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=555886968]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 22.390835, 0)
+light_energy = 1.029
+light_indirect_energy = 1.136
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=925913222]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=2015076350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.359953, 0.5012436, 0.018886566)
+shape = SubResource("BoxShape3D_iijfg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=106264368]
+transform = Transform3D(3.0519993, 0, 0, 0, 2.7681897, 0, 0, 0, 17.077225, -12.362015, 0.49879432, 0)
+mesh = SubResource("BoxMesh_eeo38")

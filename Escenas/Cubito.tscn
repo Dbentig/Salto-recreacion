@@ -1,16 +1,23 @@
 [gd_scene format=3 uid="uid://b3rpl8pywffc"]
 
 [ext_resource type="Script" uid="uid://m5lxmeuxp3oe" path="res://Scripts/cubito.gd" id="1_lykk2"]
+[ext_resource type="Shader" uid="uid://5uswkebe0cq5" path="res://shaders/Cubito3d.gdshader" id="2_6h040"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6h040"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_6h040"]
+radius = 0.42478526
 
-[sub_resource type="BoxMesh" id="BoxMesh_lykk2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lykk2"]
+render_priority = 0
+shader = ExtResource("2_6h040")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekyvm"]
 
 [node name="Cubito" type="CharacterBody3D" unique_id=58941857]
 script = ExtResource("1_lykk2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=70690728]
-shape = SubResource("BoxShape3D_6h040")
+shape = SubResource("SphereShape3D_6h040")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1202318689]
-mesh = SubResource("BoxMesh_lykk2")
+material_override = SubResource("ShaderMaterial_lykk2")
+mesh = SubResource("BoxMesh_ekyvm")
