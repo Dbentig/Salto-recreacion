@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cixoyod5f5fs8" path="res://Scripts/camara_3d.gd" id="1_qkn8y"]
 
-[node name="Camera3D" type="Camera3D" unique_id=1511652403]
+[node name="Camara3D" type="Camera3D" unique_id=1511652403]
+far = 4000.15
 script = ExtResource("1_qkn8y")

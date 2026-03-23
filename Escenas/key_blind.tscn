@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dkb2u2l7r4tlw"]
+
+[node name="Control" type="Control" unique_id=1841104017]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = 79.0
+offset_right = 139.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=688368019]
+layout_mode = 0
+offset_right = 251.0
+offset_bottom = 124.0
+text = "Moverse → AWSD o ←→↑↓
+Saltar → Espacio
+Dash → Q / Recarga de 2s
+Alejar/acercar la camara  →  +/-"
